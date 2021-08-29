@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import BaseLayout from '../layouts/BaseLayout.vue';
-
+import Todos from '../views/Todos.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path : '/',
@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/about',
         name: 'About',
         component: About
+      },
+      {
+        path: '/todos',
+        name: 'Todos',
+        component: Todos
       }
     ]
   },
