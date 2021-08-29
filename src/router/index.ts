@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import BaseLayout from '../layouts/BaseLayout.vue';
 import Todos from '../views/Todos.vue'
+import NewTodo from "@/views/NewTodo.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path : '/',
@@ -23,6 +24,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/todos',
         name: 'Todos',
         component: Todos
+      },
+      {
+        path:'/new-todo',
+        name:'New Todo',
+        component:NewTodo
       }
     ]
   },

@@ -7,4 +7,8 @@ import store from './store'
 // css
 import './assets/css/main.css'
 
-createApp(App).use(store).use(router).mount('#app')
+const Vue =createApp(App)
+Vue.use(store)
+Vue.use(router)
+
+Vue.mount('#app')

@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import todo from '../types/todo'
+import {default as t_todo} from "../types/todo";
 export default {
 name: "Todo",
   props:{
-      data:todo
+      data:t_todo
   }
 }
 </script>

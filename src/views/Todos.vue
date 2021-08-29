@@ -1,6 +1,11 @@
 <template>
   <div class="p-5">
-    <h2 class="text-2xl pb-3">Todos</h2>
+    <div class="flex w-full items-center justify-between  pb-3">
+      <h2 class="text-2xl">Todos</h2>
+
+      <router-link to="/new-todo" class="bg-white hover:bg-gray-100  px-4 py-2 shadow">New Todo</router-link>
+
+    </div>
 
     <div>
       <input type="text" v-model="search" class="w-full p-2 mb-5 shadow" placeholder="search..." >
@@ -20,7 +25,7 @@
 import {ref,computed} from 'vue'
 import Todo from "@/components/Todo.vue";
 import {useStore} from "vuex";
-import t_todo from "../types/todo"
+import {default as t_todo} from "../types/todo";
 export default {
   name: "Todos",
   components: {Todo},
@@ -45,10 +50,6 @@ export default {
       loading.value=false
     }
 
-
-
-
-//const nameAndCountry: ComputedRef<string> = computed((): string => `The movie name is ${movieName.value} from ${country.value}`);
 
 
 

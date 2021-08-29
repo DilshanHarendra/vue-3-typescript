@@ -1,8 +1,8 @@
-import todo from '../types/todo'
+import {default as t_todo} from '../types/todo'
 import axios from "axios";
 
 export type State ={
-    todos:Array<todo>
+    todos:Array<t_todo>
 }
 
 const state:State={
@@ -15,8 +15,11 @@ export default {
     state:state,
     namespaced:true,
     mutations: {
-        setTodos(state:State,todos:todo[]){
+        setTodos(state:State,todos:t_todo[]){
             state.todos=todos
+        },
+        addNewTodo(state:State,todo:t_todo){
+            state.todos.push(todo)
         }
     },
     actions: {
@@ -29,6 +32,9 @@ export default {
                     reject(err)
                 })
             })
+        },
+        ADD_NEW_TODO({commit}:{commit:Function},todo:t_todo){
+            commit('addNewTodo',todo)
         }
     },
     getters:{
