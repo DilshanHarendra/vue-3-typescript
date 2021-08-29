@@ -1,5 +1,6 @@
 import {default as t_todo} from '../types/todo'
 import axios from "axios";
+import todoApiModule from "@/apis/todoApiModule";
 
 export type State ={
     todos:Array<t_todo>
@@ -25,7 +26,7 @@ export default {
     actions: {
         GET_TODOS({commit}:{commit:Function}){
             return new Promise((resolve, reject) => {
-                axios.get(`https://jsonplaceholder.typicode.com/todos`).then(res=>{
+                todoApiModule.getAll().then(res=>{
                     commit('setTodos',res.data)
                     resolve(res.data)
                 }).catch(err=>{
